@@ -1,0 +1,57 @@
+﻿@model QuestionModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+@using (Html.BeginForm("Details", "Questions", null, FormMethod.Post, true, new { @role = "form" }))
+{
+    <div class="row">
+        <div class="col-md-6">
+            <h4>Question</h4>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.QuestionText)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.QuestionText)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.Answer1)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.RadioButtonFor(model => model.UserAnswer, Model.Answer1)
+                    @Html.LabelFor(model => model.Answer1, Model.Answer1)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.Answer2)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.RadioButtonFor(model => model.UserAnswer, Model.Answer2)
+                    @Html.LabelFor(model => model.Answer2, Model.Answer2)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.Answer3)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.RadioButtonFor(model => model.UserAnswer, Model.Answer3)
+                    @Html.LabelFor(model => model.Answer3, Model.Answer3)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.Answer4)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.RadioButtonFor(model => model.UserAnswer, Model.Answer4)
+                    @Html.LabelFor(model => model.Answer4, Model.Answer4)
+                </dd>
+            </dl>
+            <input type="submit" value="Submit" class="btn btn-primary" />
+        </div>
+        <div class="col-md-6">
+            <img width="200" height="200" style="max-width: 100%; max-height: 200px;" src="@Url.Action("GetImage", "Questions", new { ID = Model.Id })" alt="Question Image" />
+        </div>
+    </div>
+}

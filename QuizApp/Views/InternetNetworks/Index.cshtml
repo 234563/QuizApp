@@ -1,0 +1,89 @@
+﻿@model IEnumerable<InternetNetwork>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<br />
+<p>
+    <a asp-action="Create">Create New Network</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Code1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NetworkName1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Code2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NetworkName2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Code3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NetworkName3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Code4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NetworkName4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Code5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NetworkName5)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Code1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NetworkName1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Code2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NetworkName2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Code3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NetworkName3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Code4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NetworkName4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Code5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NetworkName5)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

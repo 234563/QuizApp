@@ -1,0 +1,79 @@
+﻿@model InternetNetwork
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>InternetNetwork</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID" />
+            <div class="form-group">
+                <label asp-for="Code1" class="control-label"></label>
+                <input asp-for="Code1" class="form-control" />
+                <span asp-validation-for="Code1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NetworkName1" class="control-label"></label>
+                <input asp-for="NetworkName1" class="form-control" />
+                <span asp-validation-for="NetworkName1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Code2" class="control-label"></label>
+                <input asp-for="Code2" class="form-control" />
+                <span asp-validation-for="Code2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NetworkName2" class="control-label"></label>
+                <input asp-for="NetworkName2" class="form-control" />
+                <span asp-validation-for="NetworkName2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Code3" class="control-label"></label>
+                <input asp-for="Code3" class="form-control" />
+                <span asp-validation-for="Code3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NetworkName3" class="control-label"></label>
+                <input asp-for="NetworkName3" class="form-control" />
+                <span asp-validation-for="NetworkName3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Code4" class="control-label"></label>
+                <input asp-for="Code4" class="form-control" />
+                <span asp-validation-for="Code4" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NetworkName4" class="control-label"></label>
+                <input asp-for="NetworkName4" class="form-control" />
+                <span asp-validation-for="NetworkName4" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Code5" class="control-label"></label>
+                <input asp-for="Code5" class="form-control" />
+                <span asp-validation-for="Code5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NetworkName5" class="control-label"></label>
+                <input asp-for="NetworkName5" class="form-control" />
+                <span asp-validation-for="NetworkName5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

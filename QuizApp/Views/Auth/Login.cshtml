@@ -1,0 +1,40 @@
+﻿@model QuizApp.Models.LoginModel
+@{
+    ViewBag.Title = "Login";
+}
+
+<h1 class="row justify-content-center">Login</h1>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            @using (Html.BeginForm("Login", "Auth",null, FormMethod.Post, true, new { @class = "form-validate", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+  
+            <div class="form">
+                 <hr />
+                <div class="form-group">
+                    @Html.TextBoxFor(e => e.Email, new { @class = "form-control",  @required = true , @placeholder = "Email"} )
+                </div>
+                <hr />
+                <div class="form-group">
+                    @Html.TextBoxFor(e => e.Password, new { @class = "form-control", @required = true, @placeholder = "Password" })
+                </div>
+                <hr />
+                <div class="form-group">
+                    <input type="submit" value="Login" class="btn btn-primary" />
+                </div>
+                    
+                 <div>
+                        <a asp-action="Register">Register</a>
+                 </div>
+            </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+
+         
